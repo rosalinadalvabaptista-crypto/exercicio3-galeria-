@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Fotográfico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md p-6 text-center">
+        <h1 class="text-4xl font-bold">Minha Galeria</h1>
+        <p class="text-gray-600 mt-2">Eu na área de comunicação: Mídias Digitais e Multimédia</p>
+    </header>
+
+
+    <!-- Galeria -->
+    <main class="max-w-7xl mx-auto p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Item 1 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo1.jpg.jpeg"
+                     alt="foto perfil com câmera"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">im just a girl — 2025</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo2.jpg.jpeg"
+                     alt="Descrição da foto 2"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">cor do ténis a combinar — 2024</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo3.jpg.jpeg"
+                     alt="Descrição da foto 3"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">We Are Legacy! — 2025</p>
+            </div>
+
+            <!--Item 4 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo4.jpg.jpeg"
+                     alt="Descrição da foto 4"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">concentrada na imagem — 2024</p>
+            </div>
+
+            <!--Item 5 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo5.jpg.jpeg"
+                     alt="Descrição da foto 5"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">não sou muito fã em ficar no som da live — 2025</p>
+            </div>
+
+            <!--Item 6 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo6.jpg.jpeg"
+                     alt="Descrição da foto 6"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">mídia w/ friends — 2024</p>
+            </div>
+
+            <!--Item 7 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo7.jpg.jpeg"
+                     alt="Descrição da foto 7"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">as divas câmera 1 e câmera 2 — 2025</p>
+            </div>
+
+            <!--Item 8 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo8.jpg.jpeg"
+                     alt="Descrição da foto 8"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">bestiesss — 2024</p>
+            </div>
+
+            <!--Item 9 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo9.jpg.jpeg"
+                     alt="Descrição da foto 9"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">Cansada porém plena — 2025</p>
+            </div>
+
+            <!--Item 10 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo10.jpg.jpeg"
+                     alt="Descrição da foto 10"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">Cansada porém plena...outra vez — 2025</p>
+            </div>
+
+
+           <!--Item 11 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo11.jpg.jpeg"
+                     alt="Descrição da foto 11"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">aleatória mesmo — 2025</p>
+            </div>
+
+            <!--Item 12 -->
+            <div class="gallery-item cursor-pointer">
+                <img src="photo12.jpg.jpeg"
+                     alt="transmissão ao vivo"
+                     class="w-full h-64 object-cover rounded-lg hover:opacity-80 transition">
+                     <p class="text-center text-sm text-gray-600 mt-2">a conferir se a imagem está em direto — 2024</p>
+            
+
+
+
+        </div>
+    </main>
+
+
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+        <span class="absolute top-4 right-4 text-white text-4xl cursor-pointer" id="close">&times;</span>
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-full p-4">
+    </div>
+
+    <script>
+        // JavaScript para lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close');
+
+        galleryItems.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.classList.remove('hidden');
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+            }
+        });
+
+
+    </script>
+</body>
+</html>
